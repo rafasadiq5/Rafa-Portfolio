@@ -882,7 +882,7 @@ padding: 15px 0;
     line-height: 0.5;
 
 }
-
+.back-button
 
 blockquote {
 
@@ -1862,36 +1862,37 @@ body {
 /* =========================
    BACK BUTTON
 ========================= */
-
-.back-button {
-
-    border: none;
-
-    background: none;
-
-    padding: 0;
-
-    font-family: var(--mono);
-
-    font-size: 10px;
-
-    color: var(--sky-dark);
-
-    cursor: pointer;
-
-    margin-bottom: 60px;
-
-    transition: 0.3s;
-
+/* تنسيق زر العودة المكبر */
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  font-size: 1.2rem; /* تكبير الخط */
+  font-weight: bold;
+  color: #ffffff;
+  background-color: #222222; /* لون الخلفية */
+  border-radius: 50px; /* زوايا دائرية بسيطة */
+  text-decoration: none;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* ظل لإبراز الزر */
+  transition: all 0.3s ease;
 }
 
+/* تأثير عند مرور الماوس على الزر */
+.back-btn:hover {
+  background-color: #000000;
+  transform: translateY(-3px); /* رفعة بسيطة للأعلى */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
 
-.back-button:hover {
+.back-btn .arrow {
+  font-size: 1.4rem;
+  transition: transform 0.3s ease;
+}
 
-    color: var(--ink);
-
-    transform: translateX(5px);
-
+.back-btn:hover .arrow {
+  transform: translateX(5px); /* تحريك السهم عند التأشير */
 }
 
 
@@ -2062,47 +2063,100 @@ body {
 }
 
 
-/* Skills */
 
-.skills {
-    direction: rtl;
-}
-
-.skills-layout {
-    direction: rtl;
-}
-
-.skill-row {
-    direction: rtl;
-}
-
-
-/* Tools */
-
-.tools {
-    direction: rtl;
-}
-
-.tools-header {
-    text-align: right;
-}
 
 
 /* Contact */
 
-.contact {
-    direction: rtl;
+/* تنسيق قسم التواصل */
+/* تنسيق قسم التواصل الرئيسي */
+/* قسم التواصل موحد الألوان */
+.contact-section {
+  padding: 60px 20px;
+  text-align: center;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  margin-top: 60px;
 }
 
-.contact-content {
-    text-align: right;
+.contact-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #111111;
 }
 
-.contact-details {
-    text-align: right;
+.contact-section p {
+  font-size: 1rem;
+  color: #666666;
+  margin-bottom: 35px;
 }
 
+/* التنسيق الشبكي للأزرار */
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
+/* تنسيق زر التواصل الحيادي */
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 22px;
+  border-radius: 12px;
+  color: #111111; /* لون النص الافتراضي للموقع */
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5; /* إطار هادئ بدون ألوان فاقعة */
+  text-decoration: none;
+  transition: all 0.25s ease;
+  min-width: 210px;
+}
+
+/* أيقونات SVG */
+.social-icon {
+  width: 22px;
+  height: 22px;
+  fill: #111111; /* لون الأيقونة موحد مع النص */
+  transition: fill 0.25s ease;
+}
+
+.btn-text {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.platform-name {
+  font-size: 0.8rem;
+  color: #777777;
+}
+
+.handle-name {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+/* التفاعل عند التأشير (Hover) */
+.social-btn:hover {
+  background-color: #111111; /* يعكس اللون للداكن عند التأشير */
+  border-color: #111111;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.social-btn:hover .platform-name {
+  color: #cccccc;
+}
+
+.social-btn:hover .handle-name {
+  color: #ffffff;
+}
+
+.social-btn:hover .social-icon {
+  fill: #ffffff; /* تحول الأيقونة إلى الأبيض عند التأشير */
+}
 /* Footer */
 
 footer {
@@ -2191,3 +2245,5 @@ footer {
     }
 
 }
+
+
