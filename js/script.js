@@ -155,98 +155,29 @@ const collections = {
    MOBILE MENU
 ========================================================= */
 
-
 const menuButton = document.getElementById("menuButton");
 const navLinks = document.querySelector(".nav-links");
 
 if (menuButton && navLinks) {
 
-    menuButton.addEventListener("click", () => {
+    menuButton.addEventListener("click", function () {
 
         navLinks.classList.toggle("open");
-        menuButton.classList.toggle("active");
+        menuButton.classList.toggle("open");
 
     });
 
-}
-
-
-/* =====================================================
-   CLOSE MOBILE MENU AFTER CLICK
-===================================================== */
-
-if (navLinks) {
 
     const links = navLinks.querySelectorAll("a");
 
-    links.forEach(link => {
+    links.forEach(function (link) {
 
-        link.addEventListener("click", () => {
+        link.addEventListener("click", function () {
 
             navLinks.classList.remove("open");
-
-            if (menuButton) {
-                menuButton.classList.remove("active");
-            }
+            menuButton.classList.remove("open");
 
         });
-
-    });
-
-}
-
-
-/* =====================================================
-   SMOOTH SCROLL
-===================================================== */
-
-const internalLinks = document.querySelectorAll(
-    'a[href^="#"]'
-);
-
-internalLinks.forEach(link => {
-
-    link.addEventListener("click", function (event) {
-
-        const targetId = this.getAttribute("href");
-
-        if (targetId === "#") {
-            return;
-        }
-
-        const target = document.querySelector(targetId);
-
-        if (target) {
-
-            event.preventDefault();
-
-            target.scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-            });
-
-        }
-
-    });
-
-});
-
-
-/* =====================================================
-   NAVBAR SCROLL EFFECT
-===================================================== */
-
-const navbar = document.querySelector(".navbar");
-
-if (navbar) {
-
-    window.addEventListener("scroll", () => {
-
-        if (window.scrollY > 50) {
-            navbar.classList.add("scrolled");
-        } else {
-            navbar.classList.remove("scrolled");
-        }
 
     });
 
